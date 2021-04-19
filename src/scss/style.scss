@@ -1,0 +1,234 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+:root {
+    --font-default: "PT Serif", Georgia, "Times New Roman", serif;
+    --font-secondary: "Segoe UI", Helvetica, Arial, sans-serif;
+    --body-bg: #fafafa;
+    --body-color: #555;
+    --link-color: #222;
+    --link-color-hover: #000;
+    --link-border-color: rgba(0, 0, 0, .25);
+	--heading-color: #333;
+	--hr-color: rgba(0, 0, 0, .1);
+	--kbd-color: var(--body-color);
+	--kbd-bg: #eee;
+	--code-color: rgba(212, 73, 80, 1);
+	--code-snippet-border: rgba(0, 0, 0, .05);
+	--blockquote-border: #e5e5e5
+    color-scheme: light dark;
+}
+
+:root.dark {
+    --body-bg: #212529;
+    --body-color: #6c757d;
+    --link-color: rgba(255, 255, 255, 0.65);
+    --link-color-hover: #fff;
+    --link-border-color: rgba(255, 255, 255, 0.3);
+    --heading-color: #dee2e6;
+    --kbd-color: rgba(255, 255, 255, 0.5);
+    --kbg-bg: rgba(255, 255, 255, 0.1);
+    --hr-color: rgba(255, 255, 255, 0.1);
+    --code-color: rgba(212, 73, 80, 0.85);
+    --code-snippet-border: rgba(255, 255, 255, 0.1);
+    --blockquote-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+}
+body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+}
+a {
+    color: var(--link-color);
+}
+a:hover {
+    color: var(--link-color-hover);
+}
+@media(min-width: 48em) {
+    html {
+        font-size: 21px;
+    }
+}
+
+.toggleSwitch span span {
+    display: none;
+  }
+  
+  @media only screen {
+    .toggle {
+        margin-right:40px;
+        margin-left: 40px;
+        margin-top:6px;
+    }
+    .toggleSwitch {
+      display: inline-block;
+      height: 18px;
+      position: relative;
+      overflow: visible;
+      padding: 0;
+      margin-left: 50px;
+      cursor: pointer;
+      width: 40px
+    }
+    .toggleSwitch * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .toggleSwitch label,
+    .toggleSwitch > span {
+      line-height: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+    .toggleSwitch input:focus ~ a,
+    .toggleSwitch input:focus + label {
+      outline: none;
+    }
+    .toggleSwitch label {
+      position: relative;
+      z-index: 3;
+      display: block;
+      width: 100%;
+    }
+    .toggleSwitch input {
+      position: absolute;
+      opacity: 0;
+      z-index: 5;
+    }
+    .toggleSwitch > span {
+      position: absolute;
+      left: -75px;
+      width: 100%;
+      margin: 0;
+      padding-right: 50px;
+      text-align: left;
+      white-space: nowrap;
+      font-size: 0.7em;
+      color: var(--link-color);
+    }
+    .toggleSwitch > span span {
+      position: absolute;
+      left: 0;
+      z-index: 5;
+      display: block;
+      width: 50%;
+      margin-left: 75px;
+      text-align: left;
+      font-size: 0.6em;
+      width: 100%;
+      left: 15%;
+      top: 0px;
+      opacity: 0;
+    }
+    .toggleSwitch a {
+      position: absolute;
+      right: 50%;
+      z-index: 4;
+      display: block;
+      height: 100%;
+      padding: 0;
+      left: 2px;
+      top: 1px;
+      width: 18px;
+      background-color: #fff;
+      border: 1px solid #CCC;
+      border-radius: 100%;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    .toggleSwitch > span span:first-of-type {
+      color: #ccc;
+      opacity: 1;
+      left: 45%;
+    }
+    .toggleSwitch > span:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 75px;
+      top: 0px;
+      background-color: #fafafa;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+    .toggleSwitch input:checked ~ a {
+      border-color: #fff;
+      left: 100%;
+      margin-left: -8px;
+    }
+    .toggleSwitch input:checked ~ span:before {
+      border-color: #0097D1;
+      box-shadow: inset 0 0 0 30px #0097D1;
+    }
+    .toggleSwitch input:checked ~ span span:first-of-type {
+      opacity: 0;
+    }
+    .toggleSwitch input:checked ~ span span:last-of-type {
+      opacity: 1;
+      color: #fff;
+    }
+    /* Switch Sizes */
+    .toggleSwitch.large {
+      width: 60px;
+      height: 27px;
+    }
+    .toggleSwitch.large a {
+      width: 27px;
+    }
+    .toggleSwitch.large > span {
+      height: 29px;
+      line-height: 28px;
+    }
+    .toggleSwitch.large input:checked ~ a {
+      left: 41px;
+    }
+    .toggleSwitch.large > span span {
+      font-size: 1.1em;
+    }
+    .toggleSwitch.large > span span:first-of-type {
+      left: 50%;
+    }
+    .toggleSwitch.xlarge {
+      width: 80px;
+      height: 36px;
+    }
+    .toggleSwitch.xlarge a {
+      width: 36px;
+    }
+    .toggleSwitch.xlarge > span {
+      height: 38px;
+      line-height: 37px;
+    }
+    .toggleSwitch.xlarge input:checked ~ a {
+      left: 52px;
+    }
+    .toggleSwitch.xlarge > span span {
+      font-size: 1.4em;
+    }
+    .toggleSwitch.xlarge > span span:first-of-type {
+      left: 50%;
+    }
+  }
+  
+  
+  /*  End Toggle Switch  */
